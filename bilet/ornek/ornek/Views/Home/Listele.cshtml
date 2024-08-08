@@ -1,0 +1,53 @@
+﻿@model List<ornek.Models.biletler>
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listele</h2>
+<table class="table table-striped">
+    <tr>
+        <th style="padding:10px">TC no</th>
+        <th style="padding:10px">Adı</th>
+        <th style="padding:10px">soyadı</th>
+        <th style="padding:10px">yas</th>
+        <th style="padding:10px">bilet türü</th>
+        <th style="padding:10px">sehir</th>
+        <th style="padding:10px">Fiyat</th>
+        <th style="padding:10px">Sil</th>
+        <th style="padding:10px">Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.tcno</td>
+    <td>@item.ad</td>
+    <td>@item.soyad</td>
+    <td>@item.yas</td>
+    <td>@item.bilet_turu</td>
+    <td>@item.sehir</td>
+    <td>@item.fiyat</td>
+
+    <td>
+        <button type="button" class="btn btn-danger">
+            @Html.ActionLink("Sil", "Silme", new { id = item.ID })
+        </button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger">
+            @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID })
+        </button>
+    </td>
+</tr>
+
+    }
+
+
+
+
+
+
+
+</table>
+

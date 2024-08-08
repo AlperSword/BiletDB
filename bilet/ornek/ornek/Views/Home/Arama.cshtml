@@ -1,0 +1,70 @@
+﻿@model List<ornek.Models.biletler>
+@{
+    ViewBag.Title = "Arama";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Arama</h2>
+
+
+<form action="~/Home/Arama" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1"
+               class="form-label">Aranacak  Adı Giriniz:</label>
+        <input type="text"
+               name="aranan" class="form-control"
+               id="exampleFormControlInput1">
+    </div>
+    
+    <button type="submit" class="btn btn-warning">ARA</button>
+
+</form>
+
+<table class="table">
+    <tr>
+
+        <th scope="col">tc no</th>
+        <th scope="col">Adı</th>
+        <th scope="col">Soyadı</th>
+        <th scope="col">yas</th>
+        <th scope="col">bilet türü</th>
+        <th scope="col">sehir</th>
+        <th scope="col">fiyat</th>
+        <th scope="col">Sil</th>
+        <th scope="col">Güncelle</th>
+    </tr>
+    @if (Model != null) // aranan ürün bulunmuşsa
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.tcno</td>
+
+                <td>@item.ad</td>
+                <td>@item.soyad</td>
+                <td>@item.yas</td>
+                <td>@item.bilet_turu</td>
+                <td>@item.sehir</td>
+                <td>@item.fiyat</td>
+
+
+
+
+                <button type="button" class="btn btn-danger">
+                    @Html.ActionLink("Sil", "Silme", new { id = item.ID })
+                </button>
+
+                <td>
+                    <button type="button" class="btn btn-danger">
+                        @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID })
+                    </button>
+                </td>
+            </tr>
+
+        }
+    }
+    else
+    {
+        <h2>Liste Ara butonuna bastığınızda çıkacaktır...</h2>
+    }
+</table>

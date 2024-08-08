@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "calisanEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>calisanEkle</h2>
+
+
+<form action="~/calisan/calisanEkle" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Çalışan Adı Giriniz</strong></label>
+        <input type="text" name="cadi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Soyadını Giriniz:</strong></label>
+        <input type="text" name="sadi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong> Ücret Giriniz:</strong></label>
+        <input type="text" name="ucret" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    </div>
+
+    <br />
+    <div class="mb-3">
+        @Html.DropDownList("dropdanveri", ViewBag.depart as SelectList, "Seç",
+               new { @class = "btn btn-primary dropdown-toggle" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Çalışan Ekle</button>
+</form>
+

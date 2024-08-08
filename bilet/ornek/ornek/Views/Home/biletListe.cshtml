@@ -1,0 +1,46 @@
+﻿@using ornek.Models
+@model List<ornek.Models.biletler>
+@{
+    ViewBag.Title = "biletListe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>biletListe</h2>
+
+
+
+
+<div class="row g-0">
+    <div class="col-2 col-md-2">
+        @Html.Action("biletGoster")
+    </div>
+    <div class="col-sm-7 col-md-7">
+        @if (Model != null)
+        {
+            <div class="row mb-2">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                            <div class="card-body d-flex flex-column align-items-start">
+                                <strong class="visible-md-inline-block mb-2 text-primary">
+                                    İsim: @item.ad
+                                </strong>
+                                <h3 class="mb-0">Fiyat:@item.fiyat</h3>
+                                <div class="mb-1">Miktar:@item.bilet_turu</div>
+                                <p class="card-text">İd'si:@item.ID</p>
+                                <a href="~/Home/Sepetekle/?id=@item.ID">Sepete Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        }
+    </div>
+
+    <div class="col-3 col-md-3">
+        @Html.Action("sepet_ici")
+    </div>
+
+</div>

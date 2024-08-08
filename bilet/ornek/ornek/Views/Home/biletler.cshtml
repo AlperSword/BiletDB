@@ -1,0 +1,28 @@
+﻿@model List<ornek.Models.biletler> 
+@{
+    ViewBag.Title = "biletler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>biletler</h2>
+
+
+<h2>Urunler CartList</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ad</h5>
+                        <p class="card-text">@item.fiyat</p>
+
+
+                    </div>
+                </div>
+    
+        }
+    </div>
+</div>

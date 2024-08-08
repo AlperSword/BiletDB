@@ -1,0 +1,11 @@
+﻿@using ornek.Models
+@model List<biletler>
+
+<h2>biletGoster</h2>
+
+
+
+@foreach (var item in Model)
+{
+    <a href="~/Home/biletListe/?id=@item.ID">@item.ad</a>
+}

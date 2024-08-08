@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ornek.Models.sepet>
+
+
+
+<h2>sepet_ici</h2>
+
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.fiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.toplam)
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.adi)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.fiyati)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.adet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.toplam)
+    </td>
+    <td>
+        @Html.ActionLink("Sil", "sepetDelete", new { id = item.id })
+    </td>
+</tr>
+
+    }
+
+</table>
+<h2>Toplam=@ViewBag.toplam</h2>

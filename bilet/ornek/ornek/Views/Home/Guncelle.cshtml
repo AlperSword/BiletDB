@@ -1,0 +1,52 @@
+﻿@model ornek.Models.biletler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Guncelle</h2>
+<form action="~/Home/Guncelle" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Tc no Giriniz</strong></label>
+        <input type="hidden" name="id" value="@Model.ID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" name="tcno" value="@Model.tcno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+    </div>
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Adınızı Giriniz</strong></label>
+    <input type="text" name="ad" @Model.ad class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Lütfen  Adını Gir</div>
+</div>
+<br />
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Soyadınızı Giriniz</strong></label>
+    <input type="text" name="soyad" value="@Model.soyad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+</div>
+<br />
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Yaşınızı Giriniz</strong></label>
+    <input type="text" name="yas" value="@Model.yas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div1 id="emailHelp" class="form-text">Lütfen Giriniz</div1>
+</div>
+<br />
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Bilet türünü Giriniz</strong></label>
+    <input type="text" name="biletturu" value="@Model.bilet_turu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Konser,Futbolvb</div>
+</div>
+<br />
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Şehir Adı Giriniz</strong></label>
+    <input type="text" name="sehir" value="@Model.sehir" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Şehir Adını Giriniz</div>
+</div>
+<br />
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><strong>Fiyat Giriniz</strong></label>
+    <input type="text" name="fiyat" value="@Model.fiyat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+</div>
+<br />
+<button type="submit" class="btn btn-primary">Guncelle</button>
+</form>

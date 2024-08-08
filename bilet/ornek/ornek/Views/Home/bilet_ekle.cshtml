@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "bilet_ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>bilet_ekle</h2>
+
+<form action="~/Home/bilet_ekle" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Tc no Giriniz</strong></label>
+        <input type="number"maxlength="11" name="tcno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Adınızı Giriniz</strong></label>
+        <input type="text" name="ad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Lütfen  Adını Gir</div>
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Soyadınızı Giriniz</strong></label>
+        <input type="text" name="soyad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Yaşınızı Giriniz</strong></label>
+        <input type="number" name="yas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div1 id="emailHelp" class="form-text">Lütfen Giriniz</div1>
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Bilet türünü Giriniz</strong></label>
+        <input type="text" name="biletturu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Konser,Futbolvb</div>
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Şehir Adı Giriniz</strong></label>
+        <input type="text" name="sehir" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Şehir Adını Giriniz</div>
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><strong>Fiyat Giriniz</strong></label>
+        <input type="number" name="fiyat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Lütfen Giriniz</div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary"> Ekle</button>
+</form>
